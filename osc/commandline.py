@@ -2817,6 +2817,8 @@ Please submit there instead, or use --nodevelproject to force direct submission.
                         help='replicate the history of each package.')
     @cmdln.option('-o', '--make-older', action='store_true',
                         help='No idea')
+    @cmdln.option('-p', '--prjconf', action='store_true',
+                        help='copy the prjconf also')
     @cmdln.option('-r', '--re-sign', action='store_true',
                         help='re-sign the binaries')
     @cmdln.option('-m', '--message', metavar='TEXT',
@@ -2862,7 +2864,7 @@ Please submit there instead, or use --nodevelproject to force direct submission.
                      withhistory = opts.with_history,
                      makeolder = opts.make_older,
                      resign = opts.re_sign,
-                     now = opts.now,
+                     now = opts.now, prjconf = opts.prjconf,
                      comment = comment)
         print "done cp"
         print r
