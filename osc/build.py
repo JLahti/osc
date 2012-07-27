@@ -539,8 +539,14 @@ def main(apiurl, opts, argv):
         buildargs.append('--norootforbuild')
     if opts.clean:
         buildargs.append('--clean')
+    if opts.rebuild:
+        if not opts.rsyncsrc or not opts.rsyncdest:
+            print >>sys.stderr, 'Warning: --rebuild option is usually used with both --rsync-src and --rsync-dest'
+        buildargs.append('--skip-prep')
     if opts.noinit:
         buildargs.append('--noinit')
+    if opts.chroot_only:
+        buildargs.append('--chroot-only')
     if opts.nochecks:
         buildargs.append('--no-checks')
     if not opts.no_changelog:
