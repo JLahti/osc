@@ -17,6 +17,10 @@ class PackageQueries(dict):
     # map debian and rpm arches to common obs arches
     architectureMap = {'i386': ['i586', 'i686'], 'amd64': ['x86_64'], 'ppc64el': ['ppc64le'], 'armv6hl': ['armv6l'], 'armv7hl': ['armv7l']}
 
+    # map rpm arches to mer obs scheduler arches
+    architectureMap.update({'armv7hl': ['armv8el'], 'armv7tnhl': ['armv8el'], 
+                            'i486': ['i586', 'i686']})
+
     def __init__(self, wanted_architecture):
         self.wanted_architecture = wanted_architecture
         super(PackageQueries, self).__init__()
