@@ -3102,7 +3102,7 @@ Please submit there instead, or use --nodevelproject to force direct submission.
         if src_project == dst_project:
             raise oscerr.WrongArgs('Source and destination are the same.')
 
-        print "calling cp"
+        print("calling cp")
         r = copy_prj(src_apiurl, src_project, dst_project,
                      withbinaries = opts.with_binaries,
                      withhistory = opts.with_history,
@@ -3110,8 +3110,8 @@ Please submit there instead, or use --nodevelproject to force direct submission.
                      resign = opts.re_sign,
                      now = opts.now, prjconf = opts.prjconf,
                      comment = comment)
-        print "done cp"
-        print r
+        print("done cp")
+        print(r)
 
 
     @cmdln.option('-m', '--message', metavar='TEXT',
