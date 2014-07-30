@@ -5093,7 +5093,7 @@ def copy_prj(src_apiurl, src_project, dst_project,
     Copying can only be done on the server, in a single api call.
     """
 
-    print 'Copying project...'
+    print('Copying project...')
     query = {'cmd': 'copy', 'oproject': src_project }
     if withbinaries:
         query['withbinaries'] = '1'
