@@ -187,7 +187,7 @@ boolean_opts = ['debug', 'do_package_tracking', 'http_debug', 'post_mortem', 'tr
     'review_inherit_group', 'use_keyring', 'gnome_keyring', 'no_verify', 'builtin_signature_check', 'http_full_debug',
     'include_request_from_project', 'local_service_run', 'buildlog_strip_time']
 
-api_host_options = ['user', 'pass', 'passx', 'aliases', 'http_headers', 'email', 'sslcertck', 'cafile', 'capath', 'trusted_prj']
+api_host_options = ['user', 'pass', 'passx', 'aliases', 'http_headers', 'email', 'sslcertck', 'cafile', 'capath', 'trusted_prj', 'cgit_url', 'cgit_user', 'cgit_pass']
 
 new_conf_template = """
 [general]
@@ -926,7 +926,7 @@ def get_config(override_conffile=None,
                                     'pass': password,
                                     'http_headers': http_headers}
 
-        optional = ('email', 'sslcertck', 'cafile', 'capath')
+        optional = ('email', 'sslcertck', 'cafile', 'capath', 'cgit_url', 'cgit_user', 'cgit_pass')
         for key in optional:
             if cp.has_option(url, key):
                 if key == 'sslcertck':
